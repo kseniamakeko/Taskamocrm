@@ -1,0 +1,136 @@
+/* Reset */
+
+td {
+  display: table-cell;
+  vertical-align: inherit;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+th {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Base */
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.mbt-3 {
+  margin-top: 8rem;
+  margin-bottom: 3rem;
+}
+
+.table {
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  border-collapse: collapse;
+  border-bottom: 1px solid #dee6eb;
+}
+
+.table th,
+.table td {
+  border-color: 1px solid #000;
+  text-align: left;
+  padding: 16px;
+  color: #505050;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.table th {
+  background-color: #43b7ff;
+  color: #fff;
+}
+
+.table th:nth-child(odd) {
+  background-color: #18a2f8;
+}
+
+.table tr:nth-child(even) {
+  background-color: #ecf5fb;
+}
+
+.table tr:hover {
+  background-color: #d5dbe2;
+}
+
+.table tr {
+  transition: all 0.3ms;
+}
+
+.table td:not(:last-child) {
+  border-right: 1px solid #dee6eb;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.dropdown {
+  position: relative;
+  float: right;
+}
+
+.dropbtn {
+  background: #18a2f8;
+  color: #fff;
+  border: none;
+  padding: 14px 80px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 130px;
+  margin-top: 50px;
+}
+
+.dropbtn:hover .dropbtn:focus {
+  background-color: #01588f;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #18a2f8;
+  color: #fff;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+  margin-right: 40px;
+}
+
+.dropdown-content a {
+  color: rgb(228, 242, 250);
+  padding: 12px 55px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #18a2f8;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.radiobtn {
+  display: inline-block;
+}
+
+.radiobtn:first-child {
+  margin-top: 55px;
+  display: inline-block;
+  padding-right: 10px;
+  margin-left: 9%;
+}
