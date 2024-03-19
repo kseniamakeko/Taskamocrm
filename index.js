@@ -15,7 +15,7 @@ function fetchLeads(limit, page) {
   return fetch(apiUrl, {
     headers: {
       Authorization:
-        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImU3OTIwZTkwYWQ3NzRmMjM1ZWNmMTg4MWIyYTg2NmZiYTUyNWNiNWRhYWM5MmUxMWJkMjU4YTg5MWM1M2VhMWIxNGQwNmI0MjMxZTE5MGNmIn0.eyJhdWQiOiIxYzE1MTFkNS1hM2Y1LTQ4OWEtYjBjZS1mMjMxNDNlOTI5YTAiLCJqdGkiOiJlNzkyMGU5MGFkNzc0ZjIzNWVjZjE4ODFiMmE4NjZmYmE1MjVjYjVkYWFjOTJlMTFiZDI1OGE4OTFjNTNlYTFiMTRkMDZiNDIzMWUxOTBjZiIsImlhdCI6MTcxMDY5MTMyNSwibmJmIjoxNzEwNjkxMzI1LCJleHAiOjE3MTA3Nzc3MjUsInN1YiI6IjEwNzk2OTYyIiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMxNjMwMTM4LCJiYXNlX2RvbWFpbiI6ImFtb2NybS5ydSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJwdXNoX25vdGlmaWNhdGlvbnMiLCJmaWxlcyIsImNybSIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiMWRmOGYxMjctOWIyZi00NTg4LThhNTctYzA4NWVjMjJiZGRhIn0.n4g-yrqk3cuqZmOioUS4lJ7V7DRZMuVWJl31hxt4g6LdVLm-rNwCX0oYC1GFGSXfcLseUBAe8IFK2F_IbtA3wl_QXKKY1M50IuSou2VBB1nd0i7cbVHjN-np4ufX_tgCyPG-YSWlfvLDIxzIolir-otfxkHYPmVNlyEBDg591s1ixEufvhpKGDPN6_4Q5RRQ52w3yQU9C2caOrfcPFTGCMhe8hjMi4ZTcPwj11Ury21bS3srIjV_wLuUmgtLB3FUFB4uXRiFbNjpUPR_PUO4gLzXuX1D8AudGUTXvCUTBYCLRjg5XoDeT1VIU51acYuzZ7OqaSpWhL_xiizQPD8gqg"
+        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjlhMDdlNTIzYWVmNzkxZDlkMWUzMDg3YTA5ZDEyZGNlMTI0NjNmZGZkNWE1NWIyOGViNjVlMDYzOTliNmU3N2IwZWEyYjBlOTZhZjgzYjQxIn0.eyJhdWQiOiIxYzE1MTFkNS1hM2Y1LTQ4OWEtYjBjZS1mMjMxNDNlOTI5YTAiLCJqdGkiOiI5YTA3ZTUyM2FlZjc5MWQ5ZDFlMzA4N2EwOWQxMmRjZTEyNDYzZmRmZDVhNTViMjhlYjY1ZTA2Mzk5YjZlNzdiMGVhMmIwZTk2YWY4M2I0MSIsImlhdCI6MTcxMDg1MDA5NCwibmJmIjoxNzEwODUwMDk0LCJleHAiOjE3MTA5MzY0OTQsInN1YiI6IjEwNzk2OTYyIiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMxNjMwMTM4LCJiYXNlX2RvbWFpbiI6ImFtb2NybS5ydSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJwdXNoX25vdGlmaWNhdGlvbnMiLCJmaWxlcyIsImNybSIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiM2I2MGUzZjYtMTBiZS00ODE3LWIzOTEtYWM3NWJhZDUxNzY1In0.NQtF7rBnJXEf11g-RXj9Cx_K26uR0HzAygCVOlu5F9klvCj_OBN4uAm7KGCBRDi5KXNgYmvltezGKiA3BpBMcLIc2aHSAqg2FyvTBsWSl1d10TqqMYRh3uQXceMiIhx7p1JitoK5NyUDC6yJKpZ7EsuoL0B-PKDKzwDBloTrrAlz8vwqeQdGfym4cpBdqUP7bKYpw2NKRTkK2t0PwPQTe_8aA-QOzooTMlHNs5-ngUNOCnHzpWj7as5UsAGeZcauWVQDaFyhK3NMrVbr5ZiVziUTW_LKYk4PmkC8N9Tnsu_KMfu2N45TpyT3VUZYU-P2sMvH4iRgQzwaW8B04mwL2A"
     }
   })
     .then(function (response) {
@@ -33,39 +33,32 @@ function fetchLeads(limit, page) {
     });
 }
 
+const dealay = (seconds) => {
+  return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
+};
+
 document.addEventListener("DOMContentLoaded", async () => {
   const clientLeads = [];
   const limit = 2;
   let leadsCountResponse = limit;
-  let requestCount = 0;
+  let index = 0;
   let page = 1;
-  const delayFunction = function delay() {
-    console.log("delay");
-  };
 
   while (leadsCountResponse === limit) {
-    const intervalID = setInterval(() => {
-      if ((requestCount % 3 === 0) & (leadsCountResponse === limit)) {
-        setTimeout(delayFunction, 1000);
-      } else {
-        if (requestCount < limit) {
-          fetchLeads(limit, page);
-        } else {
-          clearInterval(intervalID);
-          console.log("Max requests reached");
-        }
+    if ((index + 1) % 3 === 0) {
+      await dealay(1);
+    } else {
+      const leads = await fetchLeads(limit, page);
+
+      for (let i = 0; i < leads.length; i++) {
+        clientLeads.push(leads[i]);
       }
-    }, 1000);
 
-    const leads = await fetchLeads(limit, page);
-
-    for (let i = 0; i < leads.length; i++) {
-      clientLeads.push(leads[i]);
+      leadsCountResponse = leads.length;
+      page++;
     }
-    leadsCountResponse = leads.length;
-    requestCount++;
-    console.log(clientLeads);
-    page++;
+
+    index++;
   }
 
   const state = {
@@ -153,7 +146,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  fetchAndPopulateLeads("name");
+  // fetchAndPopulateLeads("name");
 });
 
 //   if (i % 3 === 0) {
