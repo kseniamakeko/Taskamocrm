@@ -39,7 +39,7 @@ const dealay = (seconds) => {
 
 document.addEventListener("DOMContentLoaded", async () => {
   const clientLeads = [];
-  const limit = 2;
+  const limit = 5;
   let leadsCountResponse = limit;
   let index = 0;
   let page = 1;
